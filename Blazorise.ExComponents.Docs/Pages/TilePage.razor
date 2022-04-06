@@ -9,9 +9,9 @@
     <h3>Basic</h3>
     <Card>
         <CardBody>
-            <Div Flex="Flex.JustifyContent.Center">
-                <Tile Title="Price" Value="30000" Width="Width.Is25" />
-                <Tile Title="Price" Value="30000" Width="Width.Is25" Prefix="$" Suffix="%" />
+            <Div Flex="Flex.JustifyContent.Center.Wrap">
+                <Tile Flex="Flex.Grow.Is1" Title="Price" Value="30000"  />
+                <Tile Flex="Flex.Grow.Is1" Title="Price" Value="30000"  Prefix="$" Suffix="%" />
             </Div>
 
             <PrettyCode CodeFile="pages/tile/basic.html" Theme="Material" />
@@ -21,7 +21,7 @@
     <h3>Color</h3>
     <Card>
         <CardBody>
-            <Div Flex="Flex.JustifyContent.Between">
+            <Div Flex="Flex.JustifyContent.Between.Wrap">
                 <Tile Title="Price" Flex="Flex.Grow.Is1" Value="30000" Color="Color.Light" Prefix="$" Suffix="%" />
                 <Tile Title="Price" Flex="Flex.Grow.Is1" Value="30000" Color="Color.Info" Prefix="$" Suffix="%" />
                 <Tile Title="Price" Flex="Flex.Grow.Is1" Value="30000" Color="Color.Primary" Prefix="$" Suffix="%" />
@@ -55,7 +55,7 @@
     <h3>Alignment</h3>
     <Card>
         <CardBody>
-            <Div Flex="Flex.JustifyContent.Between">
+            <Div Flex="Flex.JustifyContent.Between.Wrap">
                 <Tile Title="Price" Alignment="TileAlignment.Start" Flex="Flex.Grow.Is1" Value="30000" Prefix="$" Suffix="%" />
                 <Tile Title="Price" Alignment="TileAlignment.Center" Flex="Flex.Grow.Is1" Value="30000" Prefix="$" Suffix="%" />
                 <Tile Title="Price" Alignment="TileAlignment.End" Flex="Flex.Grow.Is1" Value="30000" Prefix="$" Suffix="%" />
@@ -68,8 +68,8 @@
     <h3>Customize Prefix & Suffix</h3>
     <Card>
         <CardBody>
-            <Div Flex="Flex.JustifyContent.Center">
-                <Tile Title="Price" Value="30000" Color="Color.Warning" Width="Width.Is25">
+            <Div Flex="Flex.JustifyContent.Center.Wrap">
+                <Tile Title="Price" Value="30000" Color="Color.Warning">
                     <SuffixContent>
                         <Icon TextColor="TextColor.Danger" Name="IconName.ArrowUp"></Icon>
                     </SuffixContent>
@@ -77,7 +77,7 @@
                         <Icon TextColor="TextColor.White" Name="IconName.Cloud"></Icon>
                     </PrefixContent>
                 </Tile>
-                <Tile Title="Price" Value="30000" Color="Color.Primary" Width="Width.Is25">
+                <Tile Title="Price" Value="30000" Color="Color.Primary" >
                     <SuffixContent>
                         <Span>😁</Span>
                     </SuffixContent>
