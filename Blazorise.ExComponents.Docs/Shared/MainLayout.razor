@@ -64,23 +64,37 @@
                  Background="Background.Light"
                  ThemeContrast="ThemeContrast.Light" Alignment="Alignment.Start">
 
-                <BarToggler Border="Border.Is0" Bar="@_sidebar"/>
+                <BarToggler Border="Border.Is0" Bar="@_sidebar" />
                 <BarBrand>
                     Blazorise Extra Components
                 </BarBrand>
-             
-                    <BarEnd>
-                        <BarItem>
-                            <BarLink To="https://github.com/araxis/Blazorise_ExComponents"><Icon Name="@("fab fa-github")" /> <Span Padding="Padding.Is2.FromEnd">Github</Span></BarLink>
 
-                        </BarItem>
-                    </BarEnd>
-             
+                <BarEnd>
+                    <BarItem>
+                        <BarLink To="https://github.com/araxis/Blazorise_ExComponents"><Icon Name="@("fab fa-github")" /> <Span Padding="Padding.Is2.FromEnd">Github</Span></BarLink>
+
+                    </BarItem>
+                </BarEnd>
+
             </Bar>
         </LayoutHeader>
         <LayoutContent Padding="Padding.Is1">
             @Body
         </LayoutContent>
+        <LayoutFooter>
+               <Div Flex="Flex.JustifyContent.Center.AlignItems.Center">
+        <Link Margin="Margin.Is1" To="https://www.linkedin.com/in/meisam-alifallahi">
+            <Icon IconSize="IconSize.x2"  Name=@("fab fa-brands fa-linkedin") />
+        </Link>
+        <Link Margin="Margin.Is1" To="https://twitter.com/araxis_maf">
+            <Icon IconSize="IconSize.x2" Name=@("fab fa-brands fa-twitter-square") />
+        </Link>
+        <Link Margin="Margin.Is1" To="https://github.com/araxis">
+            <Icon TextColor="TextColor.Dark" IconSize="IconSize.x2" Name=@("fab fa-brands fa-github-square") />
+        </Link>
+         
+    </Div>
+        </LayoutFooter>
     </Layout>
 </Layout>
 
