@@ -1,0 +1,12 @@
+﻿<Chip Src="images/profile.jpg" Text="ExComponent" Size="Size.ExtraSmall" Closable="true" OnClosed="OnClosed" />
+
+@code {
+
+    [Inject] INotificationService NotificationService { get; set; }
+
+    private Task OnClosed()
+    {
+        return NotificationService.Success( "Chip is closed.", "😀" );
+    }
+
+}

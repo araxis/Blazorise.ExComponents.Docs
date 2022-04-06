@@ -1,0 +1,29 @@
+﻿<Slider TValue="double" Value="_value" Min="0" Max="100" ValueChanged="OnValueChanged" />
+<CircleProgress Value="_value" Color="_color" />
+
+@code {
+
+    private double _value=54;
+    Color _color=Color.Default;
+
+    private void OnValueChanged(double value)
+    {
+        _value = value;
+        switch (value)
+        {
+            case > 70:
+                _color=Color.Success;
+                return;
+            case > 55:
+                _color=Color.Info;
+                return;
+            case > 40:
+                _color=Color.Warning;
+                return;
+                default:
+            _color=Color.Danger;
+                break;
+        }
+    }
+
+}

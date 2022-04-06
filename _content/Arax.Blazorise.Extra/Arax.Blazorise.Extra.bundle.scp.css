@@ -1,0 +1,36 @@
+/* _content/Arax.Blazorise.Extra/Calendar.razor.rz.scp.css */
+.grid-container[b-ymdi40trxx] {
+     display: grid;
+     text-align: center;
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+     background: #eee;
+     padding-bottom: 10px;
+     /*    column-gap: 5px;
+    row-gap: 5px;*/
+ }
+
+
+.weekdays2[b-ymdi40trxx] {
+    color: #666;
+    text-align: center;
+    background-color: #ddd;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+
+.month-name[b-ymdi40trxx] {
+    color: white;
+    font-size: 20px;
+    /*    text-transform: uppercase;*/
+    letter-spacing: 3px;
+}
+
+.year[b-ymdi40trxx] {
+    color: white;
+    font-size: 20px;
+    /*    text-transform: uppercase;*/
+    letter-spacing: 3px;
+}
+
+
