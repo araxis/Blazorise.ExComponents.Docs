@@ -1,0 +1,11 @@
+﻿<Calendar ConfigItem="ConfigItem" />
+
+@code {
+
+    private DateItemConfig ConfigItem(DateTime date, DateItemConfig defaultConfig)
+    {
+        if(date.Day > 12 && date.Day%2==0)
+            return defaultConfig with{BackgroundColor = "orange"};
+        return defaultConfig;
+    }
+}

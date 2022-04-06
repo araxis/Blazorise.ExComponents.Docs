@@ -1,0 +1,89 @@
+﻿@inherits LayoutComponentBase
+
+<Layout Sider>
+    <LayoutSider>
+        <LayoutSiderContent>
+            <Bar @ref="@_sidebar" Mode="BarMode.VerticalInline" Shadow="Shadow.Small"
+                 Breakpoint="Breakpoint.Desktop"
+                 Background="Background.Light"
+                 ThemeContrast="ThemeContrast.Light">
+                <BarBrand>
+                    <BarItem>
+                        <BarLink To="">
+                            <img style="width:32px; height: 32px" src="/images/logo2.png">
+                            <Span Padding="Padding.Is1">ExComponents Docs</Span>
+                        </BarLink>
+                    </BarItem>
+                </BarBrand>
+                <BarStart>
+
+                    <BarItem>
+                        <BarLink To="">Home</BarLink>
+                    </BarItem>
+                    <BarItem>
+                        <BarLink To="exdivider">Extra Divider</BarLink>
+                    </BarItem>
+                    <BarItem>
+                        <BarLink To="avatar">Avatar</BarLink>
+                    </BarItem>
+                    <BarItem>
+                        <BarLink To="calendar">Calendar</BarLink>
+                    </BarItem>
+                    <BarItem>
+                        <BarLink To="chip">Chip</BarLink>
+                    </BarItem>
+                    <BarItem>
+                        <BarLink To="CircleProgress">Circle Progress</BarLink>
+                    </BarItem>
+                    <BarItem>
+                        <BarLink To="EmptyPage">Empty</BarLink>
+                    </BarItem>
+                    <BarItem>
+                        <BarLink To="ExImagePage">Extra Image</BarLink>
+                    </BarItem>
+                    <BarItem>
+                        <BarLink To="Tilepage">Tile</BarLink>
+                    </BarItem>
+                    <BarItem>
+                        <BarLink To="ToggleIconBtn">Toggle Icon Button</BarLink>
+                    </BarItem>
+                    <BarItem>
+                        <BarLink To="ToggleTextBtn">Toggle Text Button</BarLink>
+                    </BarItem>
+                    <BarItem>
+                        <BarLink To="ExCollapsepage">Extra Collapse</BarLink>
+                    </BarItem>
+
+                </BarStart>
+            </Bar>
+        </LayoutSiderContent>
+    </LayoutSider>
+    <Layout>
+        <LayoutHeader Fixed>
+            <Bar Mode="BarMode.Horizontal"
+                 Background="Background.Light"
+                 ThemeContrast="ThemeContrast.Light" Alignment="Alignment.Start">
+
+                <BarToggler Border="Border.Is0" Bar="@_sidebar"/>
+                <BarBrand>
+                    Blazorise Extra Components
+                </BarBrand>
+             
+                    <BarEnd>
+                        <BarItem>
+                            <BarLink To="https://github.com/araxis/Blazorise_ExComponents"><Icon Name="@("fab fa-github")" /> <Span Padding="Padding.Is2.FromEnd">Github</Span></BarLink>
+
+                        </BarItem>
+                    </BarEnd>
+             
+            </Bar>
+        </LayoutHeader>
+        <LayoutContent Padding="Padding.Is1">
+            @Body
+        </LayoutContent>
+    </Layout>
+</Layout>
+
+@code {
+    private Bar _sidebar;
+}

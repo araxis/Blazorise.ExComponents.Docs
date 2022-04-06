@@ -1,0 +1,72 @@
+﻿@page "/EmptyPage"
+<PageTitle>Empty</PageTitle>
+<Container Fluid="true">
+    <h1>Empty</h1>
+    <Paragraph> The <code>@("<Empty>")</code> is a Empty state placeholder.</Paragraph>
+    <h2>Examples</h2>
+
+    <h3>Basic</h3>
+    <Card>
+        <CardBody>
+            <Empty   />
+            <PrettyCode CodeFile="pages/empty/basic.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Image</h3>
+    <Card>
+        <CardBody>
+            <Empty ImageSrc="images/profile.jpg"/>
+            <PrettyCode CodeFile="pages/empty/image.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    
+    <br/>
+    <h3>Description</h3>
+    <Card>
+        <CardBody>
+            <Empty  Description="Connection Error"/>
+            <PrettyCode CodeFile="pages/empty/description.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    
+    <br/>
+    <h3>Size</h3>
+    <Card>
+        <CardBody>
+            <Empty Size="Size.ExtraSmall" Display="Display.InlineBlock"/>
+            <Empty Size="Size.Small" Display="Display.InlineBlock"/>
+            <Empty Size="Size.Default" Display="Display.InlineBlock"/>
+            <Empty Size="Size.Medium" Display="Display.InlineBlock"/>
+            <Empty Size="Size.Large" Display="Display.InlineBlock"/>
+            <Empty Size="Size.ExtraLarge" Display="Display.InlineBlock"/>
+
+            <PrettyCode CodeFile="pages/empty/size.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <h3>Customise</h3>
+    <Card>
+        <CardBody>
+            <Empty >
+                <ImageContent>
+                    <Image Border="Border.RoundedCircle"
+                           Source="images/profile.jpg"
+                           Width="Width.Auto" Height="Height.Is100"></Image>
+                </ImageContent>
+                <DescriptionContent>
+
+                    <Icon Padding="Padding.Is1" TextColor="TextColor.Warning" Name="IconName.Bell"/>
+                    <Heading TextColor="TextColor.Secondary" Size="HeadingSize.Is3">Title</Heading>
+                </DescriptionContent>
+                <ChildContent>
+                    <Button Color="Color.Warning">Retry</Button>
+                </ChildContent>
+            </Empty>
+            <PrettyCode CodeFile="pages/empty/custom.html" Theme="Material" />
+        </CardBody>
+    </Card>
+</Container>
+
+@code {
+
+}

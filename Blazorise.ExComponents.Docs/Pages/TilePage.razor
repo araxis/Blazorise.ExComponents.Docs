@@ -1,0 +1,120 @@
+﻿@page "/TilePage"
+@using Blazorise.ExComponents.Utilities
+<PageTitle>Tile</PageTitle>
+<Container Fluid="true">
+    <h1>Tile</h1>
+    <Paragraph> The <code>@("<Tile>")</code> is a component for display statistic info.</Paragraph>
+    <h2>Examples</h2>
+
+    <h3>Basic</h3>
+    <Card>
+        <CardBody>
+            <Div Flex="Flex.JustifyContent.Center">
+                <Tile Title="Price" Value="30000" Width="Width.Is25" />
+                <Tile Title="Price" Value="30000" Width="Width.Is25" Prefix="$" Suffix="%" />
+            </Div>
+
+            <PrettyCode CodeFile="pages/tile/basic.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br />
+    <h3>Color</h3>
+    <Card>
+        <CardBody>
+            <Div Flex="Flex.JustifyContent.Between">
+                <Tile Title="Price" Flex="Flex.Grow.Is1" Value="30000" Color="Color.Light" Prefix="$" Suffix="%" />
+                <Tile Title="Price" Flex="Flex.Grow.Is1" Value="30000" Color="Color.Info" Prefix="$" Suffix="%" />
+                <Tile Title="Price" Flex="Flex.Grow.Is1" Value="30000" Color="Color.Primary" Prefix="$" Suffix="%" />
+                <Tile Title="Price" Flex="Flex.Grow.Is1" Value="30000" Color="Color.Success" Prefix="$" Suffix="%" />
+                <Tile Title="Price" Flex="Flex.Grow.Is1" Value="30000" Color="Color.Warning" Prefix="$" Suffix="%" />
+                <Tile Title="Price" Flex="Flex.Grow.Is1" Value="30000" Color="Color.Danger" Prefix="$" Suffix="%" />
+            </Div>
+
+            <PrettyCode CodeFile="pages/tile/color.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    
+    <br />
+    <h3>Customize all colors</h3>
+    <Card>
+        <CardBody>
+            <Div Flex="Flex.JustifyContent.Center">
+                <Tile Title="Price" Value="30000" Prefix="$" Suffix="%"
+                      TitleTextColor="TextColor.Primary"
+                      TitleBackground="Background.Info"
+                      ValueBackground="Background.Warning"
+                      ValueTextColor="TextColor.Danger"
+                      Width="Width.Is50" />
+            
+            </Div>
+
+            <PrettyCode CodeFile="pages/tile/all-colors.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br />
+    <h3>Alignment</h3>
+    <Card>
+        <CardBody>
+            <Div Flex="Flex.JustifyContent.Between">
+                <Tile Title="Price" Alignment="TileAlignment.Start" Flex="Flex.Grow.Is1" Value="30000" Prefix="$" Suffix="%" />
+                <Tile Title="Price" Alignment="TileAlignment.Center" Flex="Flex.Grow.Is1" Value="30000" Prefix="$" Suffix="%" />
+                <Tile Title="Price" Alignment="TileAlignment.End" Flex="Flex.Grow.Is1" Value="30000" Prefix="$" Suffix="%" />
+            </Div>
+
+            <PrettyCode CodeFile="pages/tile/alignment.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br />
+    <h3>Customize Prefix & Suffix</h3>
+    <Card>
+        <CardBody>
+            <Div Flex="Flex.JustifyContent.Center">
+                <Tile Title="Price" Value="30000" Color="Color.Warning" Width="Width.Is25">
+                    <SuffixContent>
+                        <Icon TextColor="TextColor.Danger" Name="IconName.ArrowUp"></Icon>
+                    </SuffixContent>
+                    <PrefixContent>
+                        <Icon TextColor="TextColor.White" Name="IconName.Cloud"></Icon>
+                    </PrefixContent>
+                </Tile>
+                <Tile Title="Price" Value="30000" Color="Color.Primary" Width="Width.Is25">
+                    <SuffixContent>
+                        <Span>😁</Span>
+                    </SuffixContent>
+                    <PrefixContent>
+                        <Span Style="font-size: x-large" TextColor="TextColor.White">$</Span>
+                    </PrefixContent>
+                </Tile>
+            </Div>
+
+            <PrettyCode CodeFile="pages/tile/custom-pre-suf.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br />
+    <h3>Customize Entire Value</h3>
+    <Card>
+        <CardBody>
+            <Div Flex="Flex.JustifyContent.Center">
+                <Tile Width="Width.Is25" Title="price" Color="Color.Info">
+                    <ExImage Margin="Margin.Is1" ImgSrc="images/Chart3.png" />
+                </Tile>
+                <Tile Width="Width.Is25" Title="price" Color="Color.Primary">
+                    <ExImage Margin="Margin.Is1" ImgSrc="images/Chart21.png"  />
+                </Tile> 
+                <Tile Width="Width.Is25" Title="price" Color="Color.Warning">
+                    <ExImage Margin="Margin.Is1" ImgSrc="images/Chart4.png" />
+                </Tile>
+                <Tile Width="Width.Is25" Title="price" Color="Color.Success">
+                    <ExImage Margin="Margin.Is1" ImgSrc="images/Chart5.png" />
+                </Tile>
+
+            </Div>
+
+            <PrettyCode CodeFile="pages/tile/custom.html" Theme="Material" />
+        </CardBody>
+    </Card>
+</Container>
+
+@code {
+
+}

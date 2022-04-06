@@ -1,0 +1,120 @@
+﻿@page "/CircleProgress"
+<PageTitle>Circle Progress</PageTitle>
+<Container Fluid="true">
+    <h1>Circle Progress</h1>
+    <Paragraph> The <code>@("<CircleProgress>")</code> is a component for displaying simple circle progress bar.</Paragraph>
+    <h2>Examples</h2>
+
+    <h3>Basic</h3>
+
+    <Card>
+        <CardBody>
+            <CircleProgress Value="30" />
+            <PrettyCode CodeFile="pages/circlep/basic.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br />
+    <h3>Color</h3>
+
+    <Card>
+        <CardBody>
+            <CircleProgress Value="30" Color="Color.Primary" />
+            <CircleProgress Value="30" Color="Color.Dark" />
+            <CircleProgress Value="30" Color="Color.Info" />
+            <CircleProgress Value="30" Color="Color.Warning" />
+            <CircleProgress Value="30" Color="Color.Danger" />
+            <CircleProgress Value="30" Color="Color.Success" />
+
+            <PrettyCode CodeFile="pages/circlep/color.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br />
+    <h3>Size</h3>
+
+    <Card>
+        <CardBody>
+            <CircleProgress Value="30" Size="Size.ExtraSmall" />
+            <CircleProgress Value="30" Size="Size.Small" />
+            <CircleProgress Value="30" Size="Size.Default" />
+            <CircleProgress Value="30" Size="Size.Medium" />
+            <CircleProgress Value="30" Size="Size.Large" />
+            <CircleProgress Value="30" Size="Size.ExtraLarge" />
+
+            <PrettyCode CodeFile="pages/circlep/size.html" Theme="Material" />
+        </CardBody>
+    </Card>
+
+    <br />
+    <h3>Transform value</h3>
+
+    <Card>
+        <CardBody>
+            <CircleProgress Value="30" ValueTransform="ValueTransform" />
+
+            <PrettyCode CodeFile="pages/circlep/value-transform.html" Theme="Material" />
+        </CardBody>
+    </Card>
+
+    <br />
+    <h3>Customise value</h3>
+
+    <Card>
+        <CardBody>
+            <CircleProgress Value="30">
+                <ValueContent>
+                    <Span TextOverflow="TextOverflow.NoWrap" TextColor="TextColor.Primary">
+                        <Icon Name="IconName.Info" TextColor="TextColor.Info" /> @context
+                    </Span>
+                </ValueContent>
+            </CircleProgress>
+
+            <PrettyCode CodeFile="pages/circlep/custom.html" Theme="Material" />
+        </CardBody>
+    </Card>
+
+    <br />
+    <h3>a little bit of fun</h3>
+
+    <Card>
+        <CardBody>
+            <Slider TValue="double" Value="_value" Min="0" Max="100" ValueChanged="OnValueChanged" />
+            <Div TextAlignment="TextAlignment.Center">
+                <CircleProgress Value="_value" Color="_color" />
+            </Div>
+
+
+            <PrettyCode CodeFile="pages/circlep/fun.html" Theme="Material" />
+        </CardBody>
+    </Card>
+</Container>
+@code {
+
+    private string ValueTransform(double value)
+    {
+        return $"{value} %";
+    }
+
+    private double _value = 54;
+    Color _color = Color.Default;
+
+    private void OnValueChanged(double value)
+    {
+        _value = value;
+        switch (value)
+        {
+            case > 70:
+                _color = Color.Success;
+                return;
+            case > 55:
+                _color = Color.Info;
+                return;
+            case > 40:
+                _color = Color.Warning;
+                return;
+            default:
+                _color = Color.Danger;
+                break;
+        }
+    }
+
+}

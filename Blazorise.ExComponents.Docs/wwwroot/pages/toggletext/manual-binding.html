@@ -1,0 +1,12 @@
+﻿<ToggleTextButton Toggled="_toggled" ToggledChanged="OnToggleChanged"
+                  Text="Yes" ToggledText="No" />
+
+@code {
+    bool _toggled;
+
+    private void OnToggleChanged(bool toggled)
+    {
+        _toggled = toggled;
+    }
+
+}

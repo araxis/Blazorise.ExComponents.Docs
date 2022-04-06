@@ -1,0 +1,102 @@
+﻿@page "/ToggleTextBtn"
+<PageTitle>Toggle Text Button</PageTitle>
+<Container Fluid="true">
+    <h1>Toggle Text Button</h1>
+
+    <h2>Examples</h2>
+
+    <h3>Basic</h3>
+    <Card>
+        <CardBody>
+          
+            <ToggleTextButton  Text="Yes"    ToggledText="No" />
+            <ToggleTextButton  Text="Start"  ToggledText="End" />
+
+            <PrettyCode CodeFile="pages/toggletext/basic.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Button Color</h3>
+    <Card>
+        <CardBody>
+          
+            <ToggleTextButton ButtonColor="Color.Default"   Text="Yes"    ToggledText="No" />
+            <ToggleTextButton ButtonColor="Color.Secondary" Text="Yes"    ToggledText="No" />
+            <ToggleTextButton ButtonColor="Color.Info"      Text="Yes"    ToggledText="No" />
+            <ToggleTextButton ButtonColor="Color.Success"   Text="Yes"    ToggledText="No" />
+            <ToggleTextButton ButtonColor="Color.Warning"   Text="Yes"    ToggledText="No" />
+            <ToggleTextButton ButtonColor="Color.Danger"    Text="Yes"    ToggledText="No" />
+          
+            <PrettyCode CodeFile="pages/toggletext/btn-color.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Size</h3>
+    <Card>
+        <CardBody>
+          
+            <ToggleTextButton Size="Size.ExtraSmall"  Text="Yes"    ToggledText="No"/>
+            <ToggleTextButton Size="Size.Small"       Text="Yes"    ToggledText="No"/>
+            <ToggleTextButton Size="Size.Default"     Text="Yes"    ToggledText="No"/>
+            <ToggleTextButton Size="Size.Medium"      Text="Yes"    ToggledText="No"/>
+            <ToggleTextButton Size="Size.Large"       Text="Yes"    ToggledText="No"/>
+            <ToggleTextButton Size="Size.ExtraLarge"  Text="Yes"    ToggledText="No"/>
+          
+            <PrettyCode CodeFile="pages/toggletext/size.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Disable Focus</h3>
+    <Card>
+        <CardBody>
+            <ToggleTextButton Focusable="false" ButtonColor="Color.Default"   Text="Yes"    ToggledText="No" />
+            <ToggleTextButton Focusable="false" ButtonColor="Color.Primary" Text="Yes"    ToggledText="No" />
+            <PrettyCode CodeFile="pages/toggletext/focus.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br />
+    <h3>Text Colors</h3>
+    <Card>
+        <CardBody>
+            <ToggleTextButton Color="TextColor.Success" ToggledColor="TextColor.Danger" 
+                              Text="Yes"    ToggledText="No" ButtonColor="Color.Default"/>
+            <ToggleTextButton Color="TextColor.White50" ToggledColor="TextColor.Danger" 
+                              Text="Yes"    ToggledText="No" />
+            <PrettyCode CodeFile="pages/toggletext/text-color.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br />
+    <h2>Binding</h2>
+    <h3>Two-way binding</h3>
+    <Card>
+        <CardBody>
+            <Switch  @bind-Checked="_toggled">Toggled</Switch>
+            <ToggleTextButton @bind-Toggled="_toggled" Text="Yes"  ToggledText="No"/>
+            <PrettyCode CodeFile="pages/toggletext/twoway-binding.html" Theme="Material"/>
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Manual event binding</h3>
+    <Paragraph>When using the event <code>ToggledChanged</code>, you also must define the <code>Toggled</code> value attribute.</Paragraph>
+    <Card>
+        <CardBody>
+     
+            <Switch TValue="bool" @bind-Checked="_manualToggled">Toggled</Switch>
+            <ToggleTextButton Toggled="_manualToggled" ToggledChanged="OnToggleChanged"
+                              Text="Yes"  ToggledText="No"/>
+            <PrettyCode CodeFile="pages/toggletext/manual-binding.html" Theme="Material"/>
+
+        </CardBody>
+    </Card>
+</Container>
+
+@code {
+    bool _toggled;
+    bool _manualToggled;
+
+    private void OnToggleChanged(bool toggled)
+    {
+        _manualToggled = toggled;
+    }
+
+}

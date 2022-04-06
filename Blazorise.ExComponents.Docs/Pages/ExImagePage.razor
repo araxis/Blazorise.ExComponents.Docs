@@ -1,0 +1,91 @@
+﻿@page "/ExImagePage"
+@using Blazorise.ExComponents.Utilities
+<PageTitle>Extra Image</PageTitle>
+<Container Fluid="true">
+    <h1>Extra Image</h1>
+    <Paragraph> The <code>@("<ExImage>")</code> is a component for display image and extra content.</Paragraph>
+    <h2>Examples</h2>
+
+    <h3>Basic</h3>
+    <Card>
+        <CardBody  >
+            <Div Flex="Flex.JustifyContent.Center">
+                <ExImage  ImgSrc="images/2.jpg"/>
+            </Div>
+           
+            <PrettyCode CodeFile="pages/eximage/basic.html" Theme="Material"/>
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Text Overlay Color & Size</h3>
+    <Card>      
+        <CardBody Padding="Padding.Is5">
+            <Div Flex="Flex.JustifyContent.Between">
+                <ExImage ImgSrc="images/i1.jpg" Text="Overlay text"/>
+                <ExImage ImgSrc="images/i1.jpg" Text="Overlay text" TextColor="TextColor.Danger"/>
+                <ExImage ImgSrc="images/i1.jpg" Text="Overlay text" TextColor="TextColor.Warning" TextSize="HeadingSize.Is6"/>
+            </Div>
+          
+            <PrettyCode CodeFile="pages/eximage/text.html" Theme="Material"/>
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Text Position</h3>
+    <Card>
+        <CardBody >
+            <Div Flex="Flex.JustifyContent.Between">
+
+                <ExImage ImgSrc="images/i1.jpg" ContentPadding="Padding.Is1" TextSize="HeadingSize.Is5" Text="Test" TextColor="TextColor.Light" ContentPosition="ContentPosition.TopCenter" />
+                <ExImage ImgSrc="images/i1.jpg" ContentPadding="Padding.Is1" TextSize="HeadingSize.Is5" Text="Test" TextColor="TextColor.Light" ContentPosition="ContentPosition.LeftCenter" />
+                <ExImage ImgSrc="images/i1.jpg" ContentPadding="Padding.Is1" TextSize="HeadingSize.Is5" Text="Test" TextColor="TextColor.Light" ContentPosition="ContentPosition.Center" />
+                <ExImage ImgSrc="images/i1.jpg" ContentPadding="Padding.Is1" TextSize="HeadingSize.Is5" Text="Test" TextColor="TextColor.Light" ContentPosition="ContentPosition.RightCenter" />
+                <ExImage ImgSrc="images/i1.jpg" ContentPadding="Padding.Is1" TextSize="HeadingSize.Is5" Text="Test" TextColor="TextColor.Light" ContentPosition="ContentPosition.BottomCenter" />
+
+
+            </Div>
+          
+            <PrettyCode CodeFile="pages/eximage/position.html" Theme="Material"/>
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Text background & Opacity</h3>
+    <Card>
+        <CardBody Padding="Padding.Is5">
+            <Div Flex="Flex.JustifyContent.Between">
+                <ExImage ImgSrc="images/i1.jpg"  ContentBackground="Background.Warning"  Text="Overlay text" ContentPosition="ContentPosition.Bottom" Margin="Margin.Is1"/>
+                <ExImage ImgSrc="images/i1.jpg" ContentBackground="Background.Warning" ContentOpacity=".5" Text="Overlay text" ContentPosition="ContentPosition.Top" Margin="Margin.Is1"/>
+
+            </Div>
+          
+            <PrettyCode CodeFile="pages/eximage/background.html" Theme="Material"/>
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Customize</h3>
+    <Card>
+        <CardBody Padding="Padding.Is5">
+            <Div Flex="Flex.JustifyContent.Center">
+
+                <ExImage ImgSrc="images/i1.jpg" ContentPosition="ContentPosition.BottomCenter">
+                    <ChildContent >
+                        <Div Padding="Padding.Is2" 
+                             Style="background-color:#d9d310; background-color:rgba(233, 237, 42, 0.78);">
+                            <Field>
+                                <FieldLabel>Email address</FieldLabel>
+                                <TextEdit Placeholder="Enter email" />
+                            </Field>
+                        </Div>
+                    </ChildContent>
+                </ExImage>
+
+
+            </Div>
+          
+            <PrettyCode CodeFile="pages/eximage/custom.html" Theme="Material"/>
+        </CardBody>
+    </Card>
+</Container>
+
+@code {
+
+}

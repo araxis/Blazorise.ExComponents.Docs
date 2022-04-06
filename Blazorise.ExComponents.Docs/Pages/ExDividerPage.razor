@@ -1,0 +1,99 @@
+﻿@page "/exdivider"
+<PageTitle>Extra Divider</PageTitle>
+<Container Fluid="true">
+    <h1>Extra Divider</h1>
+    <Paragraph> The <code>@("<ExDivider>")</code> component is used to separate sections.</Paragraph>
+    <h2>Examples</h2>
+
+    <h3>Basic</h3>
+    <Paragraph>Dividers in their simplest form display a horizontal line.</Paragraph>
+    
+    <Card>
+        <CardBody>
+            <ExDivider/>
+            <br/>
+            <ExDivider  Color="Color.Success" />
+            <br/>
+            <ExDivider  Color="Color.Info" />
+            <br/>
+            <ExDivider  Color="Color.Warning" />
+            <br/>
+            <ExDivider  Color="Color.Danger" />
+            <br/>
+            <PrettyCode CodeFile="pages/exdivider/simple.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br/>
+    <Heading Size="HeadingSize.Is3" Margin="Margin.Is2.FromBottom.FromTop">Title</Heading>
+    <Card>
+        <CardBody>
+
+            <ExDivider Title="Title" />
+            <ExDivider Title="Title" Color="Color.Primary" />
+            <ExDivider Title="Title" Color="Color.Success" />
+            <ExDivider Title="Title" Color="Color.Info" />
+            <ExDivider Title="Title" Color="Color.Warning" />
+            <ExDivider Title="Title" Color="Color.Danger" />
+            <PrettyCode CodeFile="pages/exdivider/title.html" Theme="Material" />
+
+        </CardBody>
+    </Card>
+    <br/>
+    <Heading Size="HeadingSize.Is3" Margin="Margin.Is2.FromBottom.FromTop">Customize all parts' colors</Heading>
+    <Card>
+        <CardBody>
+            <ExDivider Title="Title"  TitleBackground="Background.Danger" TitleColor="TextColor.White" LinesColor="Background.Primary" />
+            <ExDivider Title="Title"  TitleBackground="Background.Info" TitleColor="TextColor.White" LinesColor="Background.Warning"/>
+            <ExDivider Title="Title"  TitleBackground="Background.Warning" TitleColor="TextColor.White" LinesColor="Background.Success"/>
+            <ExDivider Title="Title"  TitleBackground="Background.Success" TitleColor="TextColor.White" LinesColor="Background.Danger"/>
+            <ExDivider Title="Title"  TitleBackground="Background.Secondary" TitleColor="TextColor.White" LinesColor="Background.Info"/>
+            <PrettyCode CodeFile="pages/exdivider/colors.html" Theme="Material" />
+
+        </CardBody>
+    </Card>
+    <br/>
+    <Heading Size="HeadingSize.Is3" Margin="Margin.Is2.FromBottom.FromTop">Size</Heading>
+    <Card>
+        <CardBody>
+            <ExDivider Title="Title" Color="Color.Primary" Size="Size.ExtraSmall" />
+            <ExDivider Title="Title" Color="Color.Success" Size="Size.Small"/>
+            <ExDivider Title="Title" Color="Color.Info"    Size="Size.Default"/>
+            <ExDivider Title="Title" Color="Color.Warning" Size="Size.Medium"/>
+            <ExDivider Title="Title" Color="Color.Danger" Size="Size.Large"/>
+            <ExDivider Title="Title" Color="Color.Primary" Size="Size.ExtraLarge" />
+            <PrettyCode CodeFile="pages/exdivider/size.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br/>
+    <Heading Size="HeadingSize.Is3" Margin="Margin.Is2.FromBottom.FromTop">Position</Heading>
+    <Card>
+        <CardBody>
+            <ExDivider Title="Title" TitleAlignment="TextAlignment.Start" />
+            <ExDivider Title="Title" Color="Color.Primary" TitleAlignment="TextAlignment.Center" />
+            <ExDivider Title="Title" Color="Color.Success" TitleAlignment="TextAlignment.End" />
+            <PrettyCode CodeFile="pages/exdivider/position.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    
+    <br/>
+    <Heading Size="HeadingSize.Is3" Margin="Margin.Is2.FromBottom.FromTop">Custom Title</Heading>
+    <Card>
+        <CardBody>
+            <ExDivider Color="Color.Danger" >
+                <Icon Name="IconName.Circle" TextColor="TextColor.Primary" IconSize="IconSize.ExtraSmall"></Icon>
+                <Icon Name="IconName.Circle" TextColor="TextColor.Info" IconSize="IconSize.Small"></Icon>
+                <Icon Name="IconName.Circle" TextColor="TextColor.Warning"IconSize="IconSize.Default"></Icon>
+                <Icon Name="IconName.Circle" TextColor="TextColor.Success"IconSize="IconSize.Large"></Icon>
+                <Icon Name="IconName.Circle" TextColor="TextColor.Warning"IconSize="IconSize.Default"></Icon>
+                <Icon Name="IconName.Circle" TextColor="TextColor.Info"IconSize="IconSize.Small"></Icon>
+                <Icon Name="IconName.Circle" TextColor="TextColor.Primary"IconSize="IconSize.ExtraSmall"></Icon>
+            </ExDivider>
+            <PrettyCode CodeFile="pages/exdivider/custom.html" Theme="Material" />
+        </CardBody>
+    </Card>
+
+</Container>
+
+@code {
+
+}

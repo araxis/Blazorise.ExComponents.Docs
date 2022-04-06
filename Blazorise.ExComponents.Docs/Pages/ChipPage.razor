@@ -1,0 +1,72 @@
+﻿@page "/chip"
+<PageTitle>Chip</PageTitle>
+<Container Fluid="true">
+    <h1>Chip</h1>
+    <h2>Examples</h2>
+
+    <h3>Basic</h3>
+    <Card>
+        <CardBody>
+            <Chip Src="images/profile.jpg"  Text="ExComponent" />
+            <Chip Src="images/logo.png"  Text="ExComponent" />
+            <PrettyCode CodeFile="pages/chip/basic.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Color</h3>
+    <Card>
+        <CardBody>
+            <Chip Src="images/profile.jpg"  Text="ExComponent" Color="Color.Primary" />
+            <Chip Src="images/profile.jpg"  Text="ExComponent" Color="Color.Secondary" />
+            <Chip Src="images/profile.jpg"  Text="ExComponent" Color="Color.Info" />
+            <Chip Src="images/profile.jpg"  Text="ExComponent" Color="Color.Success" />
+            <Chip Src="images/profile.jpg"  Text="ExComponent" Color="Color.Warning" />
+            <Chip Src="images/profile.jpg"  Text="ExComponent" Color="Color.Danger" />
+            <PrettyCode CodeFile="pages/chip/color.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Text Color</h3>
+    <Card>
+        <CardBody>
+            <Chip Src="images/profile.jpg"  Text="ExComponent" TextColor="TextColor.Default" />
+            <Chip Src="images/profile.jpg"  Text="ExComponent" TextColor="TextColor.Secondary"/>
+            <Chip Src="images/profile.jpg"  Text="ExComponent" TextColor="TextColor.Success" />
+            <Chip Src="images/profile.jpg"  Text="ExComponent" TextColor="TextColor.Warning" />
+            <Chip Src="images/profile.jpg"  Text="ExComponent" TextColor="TextColor.Danger" />
+            <Chip Src="images/profile.jpg"  Text="ExComponent" TextColor="TextColor.Black50" />
+            <PrettyCode CodeFile="pages/chip/text-color.html" Theme="Material" />
+        </CardBody>
+    </Card>
+
+    <br/>
+    <h3>Size</h3>
+    <Card>
+        <CardBody>
+            <Chip Src="images/profile.jpg"  Text="ExComponent" Size="Size.ExtraSmall" />
+            <Chip Src="images/profile.jpg"  Text="ExComponent" Size="Size.Small" />
+            <Chip Src="images/profile.jpg"  Text="ExComponent" Size="Size.Default" />
+            <Chip Src="images/profile.jpg"  Text="ExComponent" Size="Size.Medium" />
+            <Chip Src="images/profile.jpg"  Text="ExComponent" Size="Size.Large" />
+            <Chip Src="images/profile.jpg"  Text="ExComponent" Size="Size.ExtraLarge" />
+            <PrettyCode CodeFile="pages/chip/size.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Closable</h3>
+    <Card>
+        <CardBody>
+            <Chip Src="images/profile.jpg"  Text="ExComponent" Color="Color.Dark" TextColor="TextColor.White50" Closable="true" OnClosed="OnClosed" />
+            <PrettyCode CodeFile="pages/chip/close.html" Theme="Material" />
+        </CardBody>
+    </Card>
+</Container>
+@code {
+    [Inject] INotificationService NotificationService { get; set; }
+
+    private Task OnClosed()
+    {
+        return NotificationService.Success( "Chip is closed.", "😀" );
+    }
+
+}

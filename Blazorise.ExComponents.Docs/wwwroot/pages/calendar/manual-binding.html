@@ -1,0 +1,11 @@
+﻿<Calendar Date="_date" DateChanged="OnDateChanged" />
+
+@code {
+
+    DateTime _date =new(1981,8,3);
+
+    private void OnDateChanged(DateTime date)
+    {
+      _date = date;
+    }
+}

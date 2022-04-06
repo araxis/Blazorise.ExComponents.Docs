@@ -1,0 +1,85 @@
+﻿@page "/calendar"
+@using Blazorise.ExComponents.Utilities
+<PageTitle>Calendar</PageTitle>
+<Container Fluid="true">
+    <h1>Calendar</h1>
+    <Paragraph> The <code>@("<Calendar>")</code> is a component for displaying calendar.</Paragraph>
+    <h2>Examples</h2>
+
+    <h3>Basic</h3>
+    <Card>
+        <CardBody>
+     
+            <Calendar/>
+            <PrettyCode CodeFile="pages/calendar/basic.html" Theme="Material"/>
+            
+          
+       
+            
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Without Highlighted today</h3>
+    <Card>
+        <CardBody>
+     
+            <Calendar RenderToday="false"/>
+            <PrettyCode CodeFile="pages/calendar/today.html" Theme="Material"/>
+
+        </CardBody>
+    </Card>
+    <br/>
+    <h2>Binding</h2>
+    <h3>Two-way binding</h3>
+    <Paragraph>By using <code>bind-Date</code> attribute the selected date will be automatically assigned to the variable.</Paragraph>
+    <Card>
+        <CardBody>
+     
+            <Calendar @bind-Date="_date"/>
+            <PrettyCode CodeFile="pages/calendar/twoway-binding.html" Theme="Material"/>
+
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Manual event binding</h3>
+    <Paragraph>When using the event <code>DateChanged</code>, you also must define the <code>Date</code> value attribute.</Paragraph>
+    <Card>
+        <CardBody>
+     
+            <Calendar Date="_date" DateChanged="OnDateChanged"/>
+            <PrettyCode CodeFile="pages/calendar/manual-binding.html" Theme="Material"/>
+
+        </CardBody>
+    </Card>
+    
+    <br/>
+    <h3>Customise Function</h3>
+    <Paragraph>by using the function <code>ConfigItem</code>, you can apply your custom config for each date.</Paragraph>
+    <Card>
+        <CardBody>
+     
+            <Calendar  ConfigItem="ConfigItem"  />
+            <PrettyCode CodeFile="pages/calendar/config.html" Theme="Material"/>
+
+        </CardBody>
+    </Card>
+
+</Container>
+
+@code {
+    
+    DateTime _date =new(1981,8,3);
+
+    private void OnDateChanged(DateTime date)
+    {
+        _date = date;
+    }
+
+    private DateItemConfig ConfigItem(DateTime date, DateItemConfig defaultConfig)
+    {
+        if(date.Day > 12 && date.Day%2==0)
+            return defaultConfig with{BackgroundColor = "orange"};
+        return defaultConfig;
+    }
+
+}
