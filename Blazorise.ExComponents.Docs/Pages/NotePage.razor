@@ -1,0 +1,76 @@
+﻿@page "/NotePage"
+@using Blazorise.ExComponents.Utilities
+<PageTitle>Note</PageTitle>
+
+<Container Fluid="true">
+    <h1>Note</h1>
+    <Paragraph> The <code>@("<Note>")</code> component is used to convey important information to the user.</Paragraph>
+    <h2>Examples</h2>
+    <h3>Basic</h3>
+    <Card>
+        <CardBody>
+            <Note Title="Note" Description="Importantant information"></Note>
+            <PrettyCode CodeFile="pages/note/basic.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Color</h3>
+    <Card>
+        <CardBody>
+            <Note Title="Note" Description="Importantant information" Color="Color.Info"/>
+            <Note Title="Note" Description="Importantant information" Color="Color.Success"/>
+            <Note Title="Note" Description="Importantant information" Color="Color.Warning"/>
+            <Note Title="Note" Description="Importantant information" Color="Color.Danger"/>
+            <Note Title="Note" Description="Importantant information" Color="Color.Dark"/>
+            <PrettyCode CodeFile="pages/note/color.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Border</h3>
+    <Card>
+        <CardBody>
+            <Note Title="Note" Description="Importantant information" NoteBorder="NoteBorder.Start"></Note>
+            <Note Title="Note" Description="Importantant information" NoteBorder="NoteBorder.Top"></Note>
+            <Note Title="Note" Description="Importantant information" NoteBorder="NoteBorder.End"></Note>
+            <Note Title="Note" Description="Importantant information" NoteBorder="NoteBorder.Bottom"></Note>
+            <PrettyCode CodeFile="pages/note/border.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>With Custom content</h3>
+    <Card>
+        <CardBody>
+            <Note Title="Note" >
+                <Div>
+                    <Paragraph>This is Custom Content</Paragraph>
+                    <Button Color="Color.Primary">Ok</Button>
+                    <Button Color="Color.Warning">Cancel</Button>
+                </Div>
+            </Note>
+            <PrettyCode CodeFile="pages/note/custom.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Close button</h3>
+    <Card>
+        <CardBody>
+            <Note Title="Note" Description="Importantant information" CloseButton></Note>
+            <PrettyCode CodeFile="pages/note/close.html" Theme="Material"/>
+        </CardBody>
+    </Card>
+    <br/>   
+    <h2>Binding</h2>
+    <h3>Visible binding</h3>
+    <Card>
+        <CardBody>
+           
+            <Note Title="Note" Description="Importantant information" @bind-Visible="visible"></Note>
+            <Switch TValue="bool" @bind-Checked="visible">Visible</Switch>
+            <PrettyCode CodeFile="pages/note/visible.html" Theme="Material"/>
+        </CardBody>
+    </Card>
+
+</Container>
+@code {
+    bool visible=true;
+}
