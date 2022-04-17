@@ -1,0 +1,51 @@
+﻿@page "/ExBadgePage"
+<PageTitle>Extra Badge</PageTitle>
+<Container Fluid="true">
+    <h1>Extra Badge</h1>
+    <h2>Examples</h2>
+
+    <h3>Basic</h3>
+    <Card>
+        <CardBody>
+            <ExBadge Lable="nuget" Message="v1.0.6"/>
+            <PrettyCode CodeFile="pages/exbadge/basic.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Size</h3>
+    <Card>
+        <CardBody>
+            <ExBadge Lable="nuget" Message="v1.0.6" Size="Size.ExtraSmall"/>
+            <ExBadge Lable="nuget" Message="v1.0.6" Size="Size.Small"/>
+            <ExBadge Lable="nuget" Message="v1.0.6" Size="Size.Default"/>
+            <ExBadge Lable="nuget" Message="v1.0.6" Size="Size.Medium"/>
+            <ExBadge Lable="nuget" Message="v1.0.6" Size="Size.Large"/>
+            <ExBadge Lable="nuget" Message="v1.0.6" Size="Size.ExtraLarge"/>
+            <PrettyCode CodeFile="pages/exbadge/size.html" Theme="Material" />
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Logo</h3>
+    <Card>
+        <CardBody>
+            <ExBadge Lable="nuget" Message="v1.0.6"  LogoSrc="images/logo2.png" />
+            <ExBadge Lable="nuget" Message="v1.0.6"  IconName="IconName.Adjust" IconColor="TextColor.Danger" />
+            <PrettyCode CodeFile="pages/exbadge/logo.html" Theme="Material"/>
+        </CardBody>
+    </Card>
+    <br/>
+    <h3>Colors</h3>
+    <Card>
+        <CardBody>
+            <ExBadge Lable="nuget" Message="v1.0.6"
+                     TextColor="TextColor.Dark"
+                     LabelBackground="Background.Success"
+                     MessageBackground="Background.Info"/>
+            <PrettyCode CodeFile="pages/exbadge/color.html" Theme="Material" />
+        </CardBody>
+    </Card>
+</Container>
+
+@code {
+
+}
