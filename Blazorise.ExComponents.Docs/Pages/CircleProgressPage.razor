@@ -13,6 +13,18 @@
             <PrettyCode CodeFile="pages/circlep/basic.html" Theme="Material" />
         </CardBody>
     </Card>
+    <br/>
+    <h3>Multiple segments</h3>
+    <Card>
+        <CardBody>
+            <CircleProgress Value="64">
+                <Range From="0" To="30" Color="Color.Danger"></Range>
+                <Range From="30" To="50" Color="Color.Warning"></Range>
+                <Range From="50" To="70" Color="Color.Info"></Range>
+            </CircleProgress>
+            <PrettyCode CodeFile="pages/circlep/multi.html" Theme="Material" />
+        </CardBody>
+    </Card>
     <br />
     <h3>Color</h3>
 
@@ -56,6 +68,21 @@
     </Card>
 
     <br />
+    <h3>Max value</h3>
+    <Paragraph>
+        progress ring angle is calculated by translating Value from (0 to MaxValue) to (0 to 360).<br />
+        By default, MaxValue is set to 100.
+    </Paragraph>
+
+    <Card>
+        <CardBody>
+            <CircleProgress Value="197" MaxValue="360" />
+
+            <PrettyCode CodeFile="pages/circlep/max.html" Theme="Material" />
+        </CardBody>
+    </Card>
+
+    <br />
     <h3>Customise value</h3>
 
     <Card>
@@ -79,9 +106,8 @@
         <CardBody>
             <Slider TValue="double" Value="_value" Min="0" Max="100" ValueChanged="OnValueChanged" />
             <Div TextAlignment="TextAlignment.Center">
-                <CircleProgress Value="_value" Color="_color" />
+                <CircleProgress Value="_value" Color="Color" />
             </Div>
-
 
             <PrettyCode CodeFile="pages/circlep/fun.html" Theme="Material" />
         </CardBody>
@@ -95,26 +121,19 @@
     }
 
     private double _value = 54;
-    Color _color = Color.Default;
+    Color Color => GetColor(_value);
 
     private void OnValueChanged(double value)
     {
         _value = value;
-        switch (value)
-        {
-            case > 70:
-                _color = Color.Success;
-                return;
-            case > 55:
-                _color = Color.Info;
-                return;
-            case > 40:
-                _color = Color.Warning;
-                return;
-            default:
-                _color = Color.Danger;
-                break;
-        }
     }
+
+    private Color GetColor(double value) => value switch
+    {
+        > 70 => Color.Success,
+        > 55 => Color.Info,
+        > 40 => Color.Warning,
+        _ => Color.Danger
+    };
 
 }
