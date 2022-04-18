@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Arax.Blazorise.Extra" Version="1.0.5" />
+    <PackageReference Include="Arax.Blazorise.Extra" Version="1.0.6" />
     <PackageReference Include="Blazorise" Version="1.0.3" />
     <PackageReference Include="Blazorise.Bootstrap5" Version="1.0.3" />
     <PackageReference Include="Blazorise.Components" Version="1.0.3" />
@@ -45,6 +45,11 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Pages\FileButtonPage.razor" />
+    <_ContentIncludedByDefault Remove="Pages\ToggleButtonPage.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\ToggleButtonPage.razor" />
   </ItemGroup>
 
 </Project>
