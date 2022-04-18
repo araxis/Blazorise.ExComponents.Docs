@@ -1,0 +1,37 @@
+﻿<FileButton Color="Color.Primary"
+            Changed="OnChanged"
+            Progressed="OnProgressed"
+            Written="OnWritten"
+            Started="OnStarted"
+            Ended="OnEnded">
+    Upload
+</FileButton>
+
+@code {
+
+        private Task OnChanged(FileChangedEventArgs e)
+        {
+        return Task.CompletedTask;
+        }
+
+        private Task OnProgressed(FileProgressedEventArgs e)
+        {
+        return Task.CompletedTask;
+        }
+
+        private Task OnWritten(FileWrittenEventArgs e)
+        {
+        return Task.CompletedTask;
+        }
+
+        private Task OnStarted(FileStartedEventArgs e)
+        {
+        return Task.CompletedTask;
+        }
+
+        private Task OnEnded(FileEndedEventArgs e)
+        {
+        return Task.CompletedTask;
+        }
+
+}

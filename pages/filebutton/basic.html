@@ -1,0 +1,10 @@
+﻿<FileButton Color="Color.Primary" Changed="OnChanged">Upload</FileButton>
+
+@code {
+
+    private Task OnChanged(FileChangedEventArgs e)
+    {
+        return Task.CompletedTask;
+    }
+
+}

@@ -1,0 +1,9 @@
+﻿<Switch @bind-Checked="_toggled">Toggled</Switch>
+<ToggleButton @bind-Toggled="_toggled" Text="Yes" ToggledText="No" />
+<ToggleButton @bind-Toggled="_toggled" Icon="IconName.Add" ToggledIcon="IconName.Remove" />
+
+@code{
+
+    bool _toggled;  
+
+}
